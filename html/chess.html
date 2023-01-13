@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <title>Chess board</title>
+    <style>
+        body {
+            text-align: center;
+        }
+ 
+        .cell {
+            height: 30px;
+            width: 30px;
+        }
+ 
+        .blackcell {
+            background-color: black;
+        }
+ 
+        .whitecell {
+            background-color: white;
+        }
+
+        table {
+            border-collapse: collapse;
+            border: 1.5px solid grey;
+            border-style: inset;
+        }
+    </style>
+</head>
+ 
+<body>
+    <span style="color:green; font-size:30px;">
+        Chess Board
+    </span>
+    <br><br>
+
+    <center id="center">
+        <table id="table">
+        </table>
+    </center>
+
+    <script src="../js/chess.js"></script>
+
+</body>
+</html>
