@@ -1,6 +1,6 @@
 # Input two numbers
 num1 = 1
-num2 = 2
+num2 = 2a
 
 # Calculate the sum
 sum = num1 + num2
