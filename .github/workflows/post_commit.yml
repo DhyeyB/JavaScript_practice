@@ -1,0 +1,19 @@
+name: Post-Commit Hook
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  post_commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run Post-Commit Hook
+        run: |
+          # Replace this with the actual command to run your post-commit script
+          ./post-commit.sh
