@@ -22,7 +22,7 @@ jobs:
 
       - name: Set Failure Flag
         id: failure-flag
-	run: |
+        run: |
           if [ "${{ failure() }}" == "true" ]; then
             echo "::set-output name=failure::true"
           fi
