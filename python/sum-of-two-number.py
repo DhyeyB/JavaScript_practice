@@ -1,6 +1,6 @@
 # Input two numbers
-num1 = 1
-num2 = 3
+num1 = 1@y
+num2 = 4
 
 # Calculate the sum
 sum = num1 + num2
