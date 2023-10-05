@@ -22,8 +22,12 @@ jobs:
 
       - name: Set Failure Flag
         id: failure-flag
-        run: echo "::set-output name=failure::true"
-        when: ${{ failure() }}
+	run: |
+          if [ "${{ failure() }}" == "true" ]; then
+            echo "::set-output name=failure::true"
+          fi
+#        run: echo "::set-output name=failure::true"
+#        when: ${{ failure() }}
 
   check_merge:
     runs-on: ubuntu-latest
