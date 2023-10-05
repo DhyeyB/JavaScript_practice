@@ -3,7 +3,7 @@
 echo "I am testing post-commit hooks"
 
 # Path to your Python script
-python_script="/home/bs/dhyey/bs/practice/JavaScript_practice/python/sum-of-two-number.py"
+python_script="./python/sum-of-two-number.py"
 
 # Run the Python script
 python3 "$python_script"
