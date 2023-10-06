@@ -1,5 +1,5 @@
 # Input two numbers
-num1 = 1@y
+num1 = 2
 num2 = 4
 
 # Calculate the sum
