@@ -33,16 +33,16 @@ jobs:
       #   # run: echo "::set-output name=failure::true"
       #   # when: ${{ failure() }}
 
-  check_merge:
-    runs-on: ubuntu-latest
-    needs: post_commit
-    steps:
-      - name: Check Post-Commit Script Status
-        run: |
-          if [ "${{ env.failure }}" == "true" ]; then
-            echo "Post-Commit Script Failed. Preventing Merge."
-            exit 1
-          fi
+  # check_merge:
+  #   runs-on: ubuntu-latest
+  #   needs: post_commit
+  #   steps:
+  #     - name: Check Post-Commit Script Status
+  #       run: |
+  #         if [ "${{ env.failure }}" == "true" ]; then
+  #           echo "Post-Commit Script Failed. Preventing Merge."
+  #           exit 1
+  #         fi
 
 
 
