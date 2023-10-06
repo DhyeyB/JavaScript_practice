@@ -1,6 +1,6 @@
 # Input two numbers
 num1 = 2
-num2 = 3*
+num2 = 3
 
 # Calculate the sum
 sum = num1 + num2
