@@ -17,7 +17,8 @@ jobs:
       - name: Run Post-Commit Hook
         run: |
           # Replace this with the actual command to run your post-commit script
-          ./post-commit.sh
+          # ./post-commit.sh
+          python3 ./post-commit.py
           if [ $? -ne 0 ]; then
             echo "Failure detected."
             echo "failure=true" >> $GITHUB_ENV
