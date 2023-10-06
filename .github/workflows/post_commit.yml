@@ -18,16 +18,31 @@ jobs:
         run: |
           # Replace this with the actual command to run your post-commit script
           ./post-commit.sh
-#        continue-on-error: true
+          if [ $? -ne 0 ]; then
+            echo "Failure detected."
+            echo "failure=true" >> $GITHUB_ENV
+          fi
+      #   continue-on-error: true
 
-#      - name: Set Failure Flag
-#        id: failure-flag
-#        run: |
-#          if [ "${{ failure() }}" == "true" ]; then
-#            echo "::set-output name=failure::true"
-#          fi
-#        run: echo "::set-output name=failure::true"
-#        when: ${{ failure() }}
+      # - name: Set Failure Flag
+      #   id: failure-flag
+      #   run: |
+      #     if [ "${{ failure() }}" == "true" ]; then
+      #       echo "::set-output name=failure::true"
+      #     fi
+      #   # run: echo "::set-output name=failure::true"
+      #   # when: ${{ failure() }}
+
+  check_merge:
+    runs-on: ubuntu-latest
+    needs: post_commit
+    steps:
+      - name: Check Post-Commit Script Status
+        run: |
+          if [ "${{ env.failure }}" == "true" ]; then
+            echo "Post-Commit Script Failed. Preventing Merge."
+            exit 1
+          fi
 
 #  check_merge:
 #    runs-on: ubuntu-latest
